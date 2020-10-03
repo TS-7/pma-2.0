@@ -5,7 +5,6 @@ const Discord = require('discord.js');
 
     const info = await fetch("https://servers-live.fivem.net/api/servers/single/7blbde")
     .then(res => res.json())
-    console.log(info)
 
     const {hostname, clients, vars, sv_maxclients} = info.Data
     const Embed = new Discord.MessageEmbed() 
@@ -19,4 +18,5 @@ const Discord = require('discord.js');
         )
         .setFooter(`Designed by Crypticc`)
         message.channel.send(Embed)
+
 }
