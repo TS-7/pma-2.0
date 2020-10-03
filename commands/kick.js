@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 
 exports.run = (client, message, [mention, ...reason]) => {
 
+    const channel = client.channels.cache.get('760543876929945610');
     const modRole = message.guild.roles.cache.find(role => role.name === "Moderator");
     const superMods = ['460078206326800434'];
 
@@ -26,6 +27,6 @@ exports.run = (client, message, [mention, ...reason]) => {
         .setColor('#0099ff')
         .setAuthor(`${member.user.username} was kicked from the server by ${message.author.username}.`)
 
-        client.channel.cache.get('760543876929945610').send(Log)
+        channel.send(Log)
     });
 };
